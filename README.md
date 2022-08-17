@@ -1,0 +1,2 @@
+# BingSearchTesting
+Automatic Search Testing
