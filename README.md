@@ -1,2 +1,2 @@
-# BingSearchTesting
-Automatic Search Testing
+# UnitTestSelenium
+Unit Testing using Selenium, Generating HTML Reports(Test Result)
