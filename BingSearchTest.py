@@ -5,16 +5,23 @@ from selenium.webdriver.common.by import By
 import unittest
 import time
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-driver.implicitly_wait(10)
-driver.maximize_window()
 
-driver.get("https://www.bing.com/")
-driver.find_element(By.ID, 'sb_form_q').send_keys("Arif")
-driver.find_element(By.ID, 'search_icon').click()
+class BingSearch(unittest.TestCase):
 
-time.sleep(10)
-driver.quit()
-print("Test Completed")
+    @classmethod
+    def setUpClass(cls):
+        cls.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        cls.driver.implicitly_wait(10)
+        cls.driver.maximize_window()
 
+    def testSearchAutomation(self):
+        self.driver.get("https://www.bing.com/")
+        self.driver.find_element(By.ID, 'sb_form_q').send_keys("Arif")
+        self.driver.find_element(By.ID, 'search_icon').click()
+
+    @classmethod
+    def tearDownClass(cls):
+        time.sleep(10)
+        cls.driver.quit()
+        print("Test Completed")
 
