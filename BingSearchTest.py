@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import unittest
 import time
+import HtmlTestRunner
 
 
 class BingSearch(unittest.TestCase):
@@ -25,3 +26,6 @@ class BingSearch(unittest.TestCase):
         cls.driver.quit()
         print("Test Completed")
 
+
+if __name__ == '__main__':
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='/Users/arif/PycharmProjects/UnitTestSelenium/Reports'))
